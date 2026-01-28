@@ -46,7 +46,6 @@ web_vid_editor/
 ▶️ How to Run the Project
 
 1. Clone the repository:
-   git clone https://github.com/your-username/web-video-editor.git
 
 2. Open the folder:
    cd web-video-editor
