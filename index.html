@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> Web Video Editor</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="app-header">
+<button class="name_button">
+  MediaCut
+  <div class="inner-button">
+    
+  </div>
+</button>
+
+    <div class="header-actions">
+    <input type="file" id="videoInput" name="videoInput" accept="video/*" hidden>
+
+    <label for="videoInput" class="upload-btn">
+      Upload Video
+    </label>
+    
+    <button class="button" id="exportBtn">
+    Export
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+    <path
+      fill-rule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+      clip-rule="evenodd"
+    ></path>
+  </svg>
+</button>
+
+    </div>
+</header>
+
+
+<main class="editor">
+
+    <aside class="toolbar">
+        <button id="tool-select">Select</button>
+        <button id="tool-text">Effects</button>
+        <button id="tool-effects">Audio</button>
+        <button id="tool-audio">Text</button>
+        <button id="clearBtn">Clear</button>
+    </aside>
+
+    <section class="preview-area">
+    <canvas id="videoCanvas" width="960" height="540"></canvas>
+        
+    <video id="videoElement" crossorigin="anonymous"></video>
+
+    <div class="playback-controls">
+        <button id="playBtn">Play</button>
+        <button id="pauseBtn">Pause</button>
+        <span id="currentTime">00:00</span>
+    </div>
+    </section>
+
+</main>
+
+<section class="timeline-section">
+
+    <div class="timeline-ruler">
+        <span>0s</span>
+        <span>5s</span>
+        <span>10s</span>
+        <span>15s</span>
+    </div>
+
+    
+    <div class="scrubber-container">
+        <input type="range" id="scrubber" min="0" max="100" value="0" />
+    </div>
+
+    
+    <div class="tracks">
+
+        <div class="track video-track">
+            <span class="track-label">Video</span>
+            <div class="track-content" id="videoTrack"></div>
+        </div>
+
+        <div class="track text-track">
+            <span class="track-label">Text</span>
+            <div class="track-content" id="textTrack"></div>
+        </div>
+
+        <div class="track audio-track">
+            <span class="track-label">Audio</span>
+            <div class="track-content" id="audioTrack"></div>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="modal" id="textModal">
+    <div class="modal-content">
+        <h3>Add Text</h3>
+        <input type="text" id="textInput" placeholder="Enter text..." />
+        <input type="number" id="textStart" placeholder="Start (sec)" />
+        <input type="number" id="textEnd" placeholder="End (sec)" />
+        <button id="addTextBtn">Add</button>
+        <button class="closeModal">Close</button>
+    </div>
+</div>
+
+<div class="modal" id="effectsModal">
+  <div class="modal-content">
+    <h3>Effects</h3>
+
+    <div class="effects-grid">
+      <div class="effect-card" data-effect="none">Normal</div>
+      <div class="effect-card" data-effect="grayscale">B&W</div>
+      <div class="effect-card" data-effect="blur">Blur</div>
+      <div class="effect-card" data-effect="sepia">Sepia</div>
+      <div class="effect-card" data-effect="contrast">Contrast</div>
+    </div>
+
+    <button class="closeModal">Close</button>
+  </div>
+</div>
+
+<div class="modal" id="textModal">
+  <div class="modal-content">
+    <h3>Text</h3>
+
+    <input type="text" id="textValue" placeholder="Enter text">
+
+    <button id="addText">Add Text</button>
+    <button class="closeModal">Close</button>
+  </div>
+</div>
+
+<footer class="app-footer">
+   MediaCut All Rights Reserved 
+</footer>
+
+
+<script src="script.js"></script>
+<script src="timeline.js"></script>
+<script src="effects.js"></script>
+<script src="export.js"></script>
+
+</body>
+</html>
