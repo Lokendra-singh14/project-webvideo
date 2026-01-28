@@ -1,3 +1,5 @@
+THE PROJECT LINK IS THIS ---- https://lokendra-singh14.github.io/project-webvideo/
+
 🎬 MediaCut – Web Video Editor
 
 MediaCut is a browser-based video editing application built using HTML, CSS, and Vanilla JavaScript.
@@ -41,19 +43,6 @@ web_vid_editor/
 ├── export.js
 └── README.md
 
----
-
-▶️ How to Run the Project
-
-1. Clone the repository:
-
-2. Open the folder:
-   cd web-video-editor
-
-3. Open index.html in a browser
-   (Chrome, Edge, or Firefox recommended)
-
----
 
 📤 Export Information
 
